@@ -2,11 +2,11 @@ mylyrics.config(function($routeProvider, $locationProvider){
   $locationProvider.hashPrefix('');
   $routeProvider
     .when('/', {
-      templateUrl: 'views/home.html',
+      templateUrl: 'app/views/home.html',
       controller: 'homeController'
     })
     .when('/:artist/:title', {
-      templateUrl: 'views/lyrics.html',
+      templateUrl: 'app/views/lyrics.html',
       controller: 'lyricsController'
     })
 });
