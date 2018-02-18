@@ -2,6 +2,7 @@ angular.
   module('mylyrics').
   controller('lyricsController', function($scope, $http, $routeParams) {
     $scope.response = "";
+
     $http.get('https://api.lyrics.ovh/v1/'+$routeParams.artist+'/'+$routeParams.title)
       .then(function(results) { //success
         $scope.response = results.data;
