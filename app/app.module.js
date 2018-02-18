@@ -1,1 +1,1 @@
-var mylyrics = angular.module('mylyrics', ['ngRoute', 'ngSanitize']);
+angular.module('mylyrics', ['ngRoute', 'ngSanitize']);
