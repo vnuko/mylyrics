@@ -1,13 +1,18 @@
 <form class="container text-center" ng-submit="onSearch()">
   <img class="mb-4" src="assets/img/my_lyrics_logo.png" alt="logo">
-    <div class="form-group form-group-lg">
-      <input type="text" class="form-control input-lg no-radius" placeholder="Artist" ng-model="artist">
-    </div>
 
-    <div class="form-group form-group-lg">
-      <input type="text" class="form-control no-radius" placeholder="Title" ng-model="title">
-    </div>
 
-    <button class="btn btn-lg btn-mylyrics btn-block no-radius" type="submit">Search</button>
-    <p class="mt-5 mb-3 text-muted">© 2018</p>
+
+  <div class="form-group form-group-lg">
+    <input type="text" class="form-control input-lg no-radius" placeholder="Artist, Title" ng-change="onChange()" ng-model="search" value="{{search}}">
+
+    <ul>
+      <li ng-repeat="item in response"><a ng-click="onLinkClick(item)">{{item.artist.name}}, {{item.title}}</a></li>
+    </ul>
+
+  </div>
+
+  <button type="submit" style="display:none"></button>
+
+  <p class="mt-5 mb-3 text-muted">© 2018</p>
 </form>
