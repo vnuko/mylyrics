@@ -2,17 +2,19 @@
   <img class="mb-4" src="assets/img/my_lyrics_logo.png" alt="logo">
 
 
-
-  <div class="form-group form-group-lg">
-    <input type="text" class="form-control input-lg no-radius" placeholder="Artist, Title" ng-change="onChange()" ng-model="search" value="{{search}}">
-
-    <ul>
-      <li ng-repeat="item in response"><a ng-click="onLinkClick(item)">{{item.artist.name}}, {{item.title}}</a></li>
-    </ul>
-
+  <div class="input-group mb-3">
+    <input type="text" class="form-control no-radius" placeholder="Artist, Title" ng-change="onChange()" ng-model="search" value="{{search}}">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary btn-mylyrics no-radius" type="submit">Search</button>
+    </div>
   </div>
 
-  <button type="submit" style="display:none"></button>
+  <ul>
+    <li ng-repeat="item in response"><a ng-click="onLinkClick(item)">{{item.artist.name}}, {{item.title}}</a></li>
+  </ul>
+
+
+
 
   <p class="mt-5 mb-3 text-muted">© 2018</p>
 </form>
