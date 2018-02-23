@@ -3,6 +3,7 @@ angular.
   controller('homeController', function($scope, $http, $location) {
     $scope.response = "";
 
+    /** on search input field change **/
     $scope.onChange = function() {
       if($scope.search.length < 2) {
         return false;
@@ -16,11 +17,13 @@ angular.
         });
     }
 
+    /** on search button press **/
     $scope.onSearch = function() {
       var search_params = $scope.search.split(',');
       $location.path("/" + search_params[0].trim().toLowerCase() + "/" + search_params[1].trim().toLowerCase());
     }
 
+    /** on song suggestion link press **/
     $scope.onLinkClick = function(item) {
         $location.path("/" + item.artist.name.toLowerCase() + "/" + item.title.toLowerCase());
     }
