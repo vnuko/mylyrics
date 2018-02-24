@@ -11,17 +11,24 @@ angular.
 
       $http.get('https://api.lyrics.ovh/suggest/'+$scope.search)
         .then(function(results) { //success
-          $scope.response = results.data.data;
+
+          var sliced = results.data.data.slice(0,5);
+
+          $scope.response = sliced;
+
+
         }, function(results) { //error
           $scope.response = results.data.data;
         });
     }
 
     /** on search button press **/
+    /*
     $scope.onSearch = function() {
       var search_params = $scope.search.split(',');
       $location.path("/" + search_params[0].trim().toLowerCase() + "/" + search_params[1].trim().toLowerCase());
     }
+    */
 
     /** on song suggestion link press **/
     $scope.onLinkClick = function(item) {

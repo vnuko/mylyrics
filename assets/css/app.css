@@ -37,6 +37,17 @@
   animation: lds-dual-ring 1.2s linear infinite;
 }
 
+ul.suggestions {
+  padding: 10px;
+  list-style-type: none;
+  text-align: left;
+}
+
+ul.suggestions li:hover {
+  color: #007bff;
+  cursor: pointer;
+}
+
 @keyframes lds-dual-ring {
   0% {
     transform: rotate(0deg);
