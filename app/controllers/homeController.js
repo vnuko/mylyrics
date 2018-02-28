@@ -9,6 +9,7 @@ angular.
         return false;
       }
 
+      //fetch suggested songs
       $http.get('https://api.lyrics.ovh/suggest/'+$scope.search)
         .then(function(results) { //success
 
